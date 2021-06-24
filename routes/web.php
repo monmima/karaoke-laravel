@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', "App\Http\Controllers\SongController@index");
+Route::get('/{id}/edit', "App\Http\Controllers\SongController@edit");
+Route::put('/{id}/edit', "App\Http\Controllers\SongController@update");
+
+
+
+
+
