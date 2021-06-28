@@ -17,10 +17,10 @@
         <!-- because modern browsers/forms can only take two different methods -->
         @method('PUT')
 
-        <p><input type="text" value="{{ $song->name }}"></p>
-        <p><input type="text" value="{{ $song->artist }}"></p>
-        <p><input type="text" value="{{ $song->lyrics }}"></p>
-        <p><input type="text" value="{{ $song->link }}"></p>
+        <p><input type="text" name="name" id="name" value="{{ $song->name }}" placeholder="name"></p>
+        <p><input type="text" name="artist" id="artist" value="{{ $song->artist }}" placeholder="artist"></p>
+        <p><input type="text" name="lyrics" id="lyrics" value="{{ $song->lyrics }}" placeholder="lyrics"></p>
+        <p><input type="text" name="link" id="link" value="{{ $song->link }}" placeholder="link"></p>
 
         <!--BOUTONS-->
         <div class="espaces-boutons">
