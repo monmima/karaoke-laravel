@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nés pour chanter</title>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 </head>
 <body>
     <header>
-        <h1>Nés pour test</h1>
+        <h1>Nés pour chanter</h1>
     </header>
 
     <form method="POST" name="edit-song" id="edit-song" action="/{{ $song->id }}/edit">
@@ -27,7 +29,6 @@
             <button type="reset" value="Reset">Reset</button>
             <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
         </div>
-
     </form>
 
 
