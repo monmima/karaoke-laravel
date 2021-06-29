@@ -1,10 +1,26 @@
-body {
+/* body {
     color: red;
+} */
+
+h1 {
+    text-align: center;
+}
+
+main {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 1fr auto;
 }
 
 section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+section > article {
+    background-color: #f2f2f2;
+    margin: 10px;
+    padding: 10px;
 }
 
 .hidden {

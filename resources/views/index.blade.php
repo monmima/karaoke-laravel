@@ -38,26 +38,32 @@
             @endforeach
         </section>
 
+        <aside>
+            <h3>Create New Entry</h3>
+
+            <form method="POST" name="edit-song" id="edit-song" action="/create">
+                <!-- cross-site request forgery -->
+                @csrf
+                <!-- because modern browsers/forms can only take two different methods -->
+
+                <p><input type="text" name="name" id="name" placeholder="name"></p>
+                <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
+
+                <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
+
+                <p><input type="text" name="link" id="link" placeholder="link"></p>
+
+                <!--BOUTONS-->
+                <div class="espaces-boutons">
+                    <button type="reset" value="Reset">Reset</button>
+                    <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
+                </div>
+            </form>
+        </aside>
+
         <hr>
 
-        <form method="POST" name="edit-song" id="edit-song" action="/create">
-            <!-- cross-site request forgery -->
-            @csrf
-            <!-- because modern browsers/forms can only take two different methods -->
 
-            <p><input type="text" name="name" id="name" placeholder="name"></p>
-            <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
-
-            <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
-
-            <p><input type="text" name="link" id="link" placeholder="link"></p>
-
-            <!--BOUTONS-->
-            <div class="espaces-boutons">
-                <button type="reset" value="Reset">Reset</button>
-                <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
-            </div>
-        </form>
 
     </main>
 
