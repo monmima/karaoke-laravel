@@ -1,9 +1,10 @@
-/* body {
-    color: red;
-} */
-
 h1 {
     text-align: center;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -20,9 +21,42 @@ section {
 section > article {
     background-color: #f2f2f2;
     margin: 10px;
+    min-width: 200px;
     padding: 10px;
+}
+
+.edit {
+    font-size: 1.5em;
+    text-decoration: none;
 }
 
 .hidden {
     display: none;
+}
+
+.links a {
+    background-color: red;
+    color: white;
+    margin: 5px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links p {
+    margin-top: 50px;
+}
+
+.title-and-x-close-button {
+    /* background-color: #fff; */
+
+    display: flex;
+
+    align-content: start;
+    align-items: start;
+    justify-items: start;
+    justify-content: space-between;
 }

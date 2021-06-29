@@ -21,21 +21,21 @@
             @foreach ($songs as $item)
 
                 <article>
-                    <h5>{{ $item->name }} by {{ $item->artist }}</h5>
-                    <form action="/{{ $item->id }}/delete" method="post">
-                        <input class="btn btn-default" type="submit" value="X" />
-                        @csrf
-                        @method('delete')
-                    </form>
+                    <div class="title-and-x-close-button">
+                        <h5>{{ $item->name }} by {{ $item->artist }}</h5>
+                        <form action="/{{ $item->id }}/delete" method="post">
+                            <input class="btn btn-default" type="submit" value="X" />
+                            @csrf
+                            @method('delete')
 
-                    <p><a href="/{{ $item->id }}/edit">Edit Entry</a></p>
-                    <p>Name: {{ $item->name }}</p>
-                    <p>Artist: {{ $item->artist }}</p>
+                            <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
+                        </form>
+                    </div>
 
-                    <div>
-                        <span><a href="https://www.youtube.com/results?search_query={{ $item->artist }}+{{ $item->name }}">Lien de base</a> -</span>
-                        <span><a href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}">Lyrics</a> -</span>
-                        <span><a href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}">Karaoke</a></span>
+                    <div class="links">
+                        <p><a href="https://www.youtube.com/results?search_query={{ $item->artist }}+{{ $item->name }}">Lien de base</a></p>
+                        <p><a href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}">Lyrics</a></p>
+                        <p><a href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}">Karaoke</a></p>
                     </div>
                 </article>
 
