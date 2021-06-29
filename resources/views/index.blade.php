@@ -26,7 +26,6 @@
                     <p><a href="/{{ $item->id }}/edit">Edit Entry</a></p>
                     <p>Name: {{ $item->name }}</p>
                     <p>Artist: {{ $item->artist }}</p>
-                    <p>Link: {{ $item->link }}</p>
 
                     <div>
                         <span><a href="https://www.youtube.com/results?search_query={{ $item->artist }}+{{ $item->name }}">Lien de base</a> -</span>
@@ -50,8 +49,6 @@
                 <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
 
                 <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
-
-                <p><input type="text" name="link" id="link" placeholder="link"></p>
 
                 <!--BOUTONS-->
                 <div class="espaces-boutons">

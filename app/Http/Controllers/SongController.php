@@ -53,7 +53,6 @@ class SongController extends Controller
 
         //     "artist" => "required",
         //     "lyrics" => "",
-        //     "link" => "required"
 
         //     // "categorie" => "required"
         // ]);
@@ -62,7 +61,6 @@ class SongController extends Controller
         $song->name = request("name");
         $song->artist = request("artist");
         $song->lyrics = request("lyrics");
-        $song->link = request("link");
 
         // $song->categorie = request("categorie");
         $song->save();
@@ -86,7 +84,6 @@ class SongController extends Controller
             "name" => "required|min:5|max:255|unique:songs",
             "artist" => "required",
             "lyrics" => "required",
-            "link" => "required",
             // "categorie" => "required"
         ]);
 
@@ -98,7 +95,6 @@ class SongController extends Controller
         $song->name = request("name");
         $song->artist = request("artist");
         $song->lyrics = request("lyrics");
-        $song->link = request("link");
         $song->save();
 
         // --processing categories-- //

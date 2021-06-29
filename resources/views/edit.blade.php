@@ -22,8 +22,6 @@
         <p><input type="text" name="name" id="name" value="{{ $song->name }}" placeholder="name"></p>
         <p><input type="text" name="artist" id="artist" value="{{ $song->artist }}" placeholder="artist"></p>
         <textarea name="lyrics" id="lyrics" cols="30" rows="10">{{ $song->lyrics }}</textarea>
-        <p><input type="text" name="link" id="link" value="{{ $song->link }}" placeholder="link"></p>
-
 
         <!--BOUTONS-->
         <div class="espaces-boutons">

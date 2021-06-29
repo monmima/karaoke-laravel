@@ -18,7 +18,6 @@ class CreateSongsTable extends Migration
             $table->string('name');
             $table->string('artist');
             $table->string('lyrics');
-            $table->string('link');
             $table->timestamps();
         });
     }
