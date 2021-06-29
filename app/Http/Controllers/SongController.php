@@ -81,9 +81,8 @@ class SongController extends Controller
     {
 
         $validated = $request->validate([
-            "name" => "required|min:5|max:255|unique:songs",
+            "name" => "required|min:3|max:255|unique:songs",
             "artist" => "required",
-            "lyrics" => "required",
             // "categorie" => "required"
         ]);
 
