@@ -22,6 +22,11 @@
 
                 <article>
                     <h5>{{ $item->name }} by {{ $item->artist }}</h5>
+                    <form action="/{{ $item->id }}/delete" method="post">
+                        <input class="btn btn-default" type="submit" value="X" />
+                        @csrf
+                        @method('delete')
+                    </form>
 
                     <p><a href="/{{ $item->id }}/edit">Edit Entry</a></p>
                     <p>Name: {{ $item->name }}</p>

@@ -105,4 +105,19 @@ class SongController extends Controller
 
         return redirect("/")->with("msg", "Song was added");
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Produit  $produit
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+        $produit = Song::findOrFail($id);
+        $produit->delete();
+
+        return redirect("/");
+    }
 }
