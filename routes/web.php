@@ -21,7 +21,7 @@ Route::get('/', "App\Http\Controllers\SongController@index");
 Route::post('/create', "App\Http\Controllers\SongController@store");
 Route::get('/{id}/edit', "App\Http\Controllers\SongController@edit");
 Route::put('/{id}/edit', "App\Http\Controllers\SongController@update");
-Route::delete('/{id}/delete', "App\Http\Controllers\ProduitController@destroy");
+Route::delete('/{id}/delete', "App\Http\Controllers\SongController@destroy");
 
 
 
