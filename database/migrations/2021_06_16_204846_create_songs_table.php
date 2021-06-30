@@ -17,7 +17,7 @@ class CreateSongsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('artist');
-            $table->string('lyrics');
+            $table->string('lyrics')->nullable();
             $table->timestamps();
         });
     }
