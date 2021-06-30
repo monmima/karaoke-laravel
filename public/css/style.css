@@ -21,6 +21,7 @@ section {
 section > article {
     background-color: #f2f2f2;
     margin: 10px;
+    max-height: 150px;
     padding: 10px;
 }
 
@@ -67,10 +68,19 @@ section > article {
 }
 
 /* media queries */
-@media screen and (max-width: 759px) {
-
+@media screen and (max-width: 1000px) {
     /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
-    main, section {
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
+    section {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -105,5 +115,5 @@ section > article {
     }
     div, figure, figcaption {
         width: 250px;
-    } */
-}
+    }
+} */
