@@ -32,10 +32,9 @@
                         </form>
                     </div>
 
-                    <div class="links">
-                        <p><a href="https://www.youtube.com/results?search_query={{ $item->artist }}+{{ $item->name }}">Lien de base</a></p>
-                        <p><a href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}">Lyrics</a></p>
-                        <p><a href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}">Karaoke</a></p>
+                    <div class="buttons">
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}">Lyrics</a>
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}">Karaoke</a>
                     </div>
                 </article>
 
@@ -62,10 +61,6 @@
                 </div>
             </form>
         </aside>
-
-        <hr>
-
-
 
     </main>
 
