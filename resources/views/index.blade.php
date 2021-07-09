@@ -11,6 +11,8 @@
 <body>
     <header>
         <h1>Nés pour chanter</h1>
+
+        <p><a href="/categories" title="Catégories de chansons">Voir les catégories</a>
     </header>
 
     <main>
@@ -23,6 +25,8 @@
                 <article>
                     <div class="title-and-x-close-button">
                         <h5>{{ $item->name }} by {{ $item->artist }}</h5>
+
+                        <!-- delete form/button -->
                         <form action="/{{ $item->id }}/delete" method="post">
                             <input class="btn btn-default" type="submit" value="X" />
                             @csrf
@@ -30,6 +34,11 @@
 
                             <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
                         </form>
+
+                        {{-- Catégorie(s):
+                        @foreach($item->categories as $categorie)
+                            - {{ $categorie["name"] }}
+                        @endforeach</a> --}}
                     </div>
 
                     <div class="buttons">
