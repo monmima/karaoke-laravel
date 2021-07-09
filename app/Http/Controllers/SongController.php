@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Song;
+use App\Models\Category;
 use Illuminate\Validation\Rule;
 
 class SongController extends Controller
@@ -16,10 +17,30 @@ class SongController extends Controller
     public function index()
     {
         $songs = Song::all();
+        $categories = Category::all();
 
         return view("index", [
-            "songs" => $songs
+            "songs" => $songs,
+            "categories" => $categories
         ]);
+    }
+
+    public function indexJSON()
+    {
+        $songs = Song::all();
+        $categories = Category::all();
+
+        // foreach ($songs as $item) {
+        //     // dd($songs->item);
+        //     $songs->attach(1);
+        // }
+
+        $song = Song::findOrFail(1);
+        $song->categories()->attach(1);
+
+        return [
+            "songs" => $song,
+        ];
     }
 
     // show the edit form

@@ -17,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
+// songs
 Route::get('/', "App\Http\Controllers\SongController@index");
 Route::post('/create', "App\Http\Controllers\SongController@store");
 Route::get('/{id}/edit', "App\Http\Controllers\SongController@edit");
 Route::put('/{id}/edit', "App\Http\Controllers\SongController@update");
 Route::delete('/{id}/delete', "App\Http\Controllers\SongController@destroy");
 
+Route::get('/test', "App\Http\Controllers\SongController@indexJSON");
+
+// categories
+Route::get('/categories', "App\Http\Controllers\SongCategoriesController@index");
 
 
 

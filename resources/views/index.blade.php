@@ -39,6 +39,8 @@
                         @foreach($item->categories as $categorie)
                             - {{ $categorie["name"] }}
                         @endforeach</a> --}}
+
+
                     </div>
 
                     <div class="buttons">
