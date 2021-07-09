@@ -39,7 +39,8 @@ class SongController extends Controller
         $song->categories()->attach(1);
 
         return [
-            "songs" => $song,
+            // "songs" => $song,
+            "song" => $song->load('categories')
         ];
     }
 
