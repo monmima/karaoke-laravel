@@ -61,9 +61,11 @@ class SongController extends Controller
     public function edit($id)
     {
         $song = Song::findOrFail($id);
+        $categories = Category::all();
 
         return view("/edit", [
-            "song" => $song
+            "song" => $song,
+            "categories" => $categories
         ]);
     }
 
@@ -79,26 +81,38 @@ class SongController extends Controller
         //
 
         $song = Song::findOrFail($id);
-        // $categories = SongCategorie::all();
-
-        // $validated = $request->validate([
-        //     // this rule makes it possible to change the name of an item as long as the it remains unique
-        //     // this rule also makes it possible to change anything other data while keeping the same unique name for the item
-        //     "name" => ["required", "min:5", "max:255", Rule::unique("name")->ignore($song->id)],
-
-        //     "artist" => "required",
-        //     "lyrics" => "",
-
-        //     // "categorie" => "required"
-        // ]);
+        $categories = Category::all();
 
         // updating song table
         $song->name = request("name");
         $song->artist = request("artist");
         $song->lyrics = request("lyrics");
-
-        // $song->categorie = request("categorie");
         $song->save();
+
+        // --processing categories-- //
+
+            // 1. creating an array of ticked boxes
+            $input = $request->all();
+            error_log(print_r($input, true));
+
+            // 2. removing useless stuff from the array before working with it any further
+            unset($input["_token"]);
+            unset($input["_method"]);
+            unset($input["artist"]);
+            unset($input["lyrics"]);
+
+            // 3. wiping the slate clean for the categories
+            $song->categories()->detach($categories);
+
+            // 4. attaching categories that are ticked
+            // the purpose of array_keys is to return the names of the keys, not their values
+            $song->categories()->attach(array_keys($input));
+
+            // 5. returning the keys and their values to the console
+            // error_log(print_r(array_keys($input), true));
+            error_log(print_r($input, true));
+
+        // --end processing categories-- //
 
         // back to the main page
         $song = Song::all();
@@ -124,6 +138,7 @@ class SongController extends Controller
         //
 
         $song = new Song();
+        $categories = Category::all();
 
         // 1. the basic way
         $song->name = request("name");
@@ -133,7 +148,26 @@ class SongController extends Controller
 
         // --processing categories-- //
 
+            // 1. creating an array of ticked boxes
+            $input = $request->all();
 
+            // 2. removing useless stuff from the array before working with it any further
+            unset($input["_token"]);
+            unset($input["_method"]);
+            unset($input["name"]);
+
+            // 3. wiping the slate clean for the categories - this step is useless here since the entry is being created
+            // $song->categories()->detach($categories);
+
+            // 4. attaching categories that are ticked
+            // the purpose of array_keys is to return the names of the keys, not their values
+            // $song->categories()->attach(array_keys($input));
+            $song->categories()->attach(array_keys($input));
+
+            // 5. returning the keys and their values to the console
+            // error_log(print_r(array_keys($input), true));
+            // error_log(print_r(array_keys($input), true));
+            // error_log(print_r($input, true));
 
         // --end processing categories-- //
 

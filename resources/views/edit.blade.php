@@ -23,6 +23,31 @@
         <p><input type="text" name="artist" id="artist" value="{{ $song->artist }}" placeholder="artist"></p>
         <textarea name="lyrics" id="lyrics" cols="30" rows="10">{{ $song->lyrics }}</textarea>
 
+        <!-- create array of ticked boxes -->
+        <?php $tickedArray = array() ?>
+
+        <!-- push data to the array -->
+        @foreach($song->categories as $tickedBox)
+            <?php
+                array_push($tickedArray, $tickedBox->title);
+            ?>
+        @endforeach
+
+        <hr>
+
+        <!-- compare and print the data -->
+        @foreach($categories as $categorie)
+
+            @if (in_array($categorie->title, $tickedArray))
+                <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}" checked>
+                <label for="{{ $categorie->id }}">{{ $categorie["title"] }}</label><br>
+            @else
+                <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}">
+                <label for="{{ $categorie->id }}">{{ $categorie["title"] }}</label><br>
+            @endif
+
+        @endforeach
+
         <!--BOUTONS-->
         <div class="espaces-boutons">
             <button type="reset" value="Reset">Reset</button>
