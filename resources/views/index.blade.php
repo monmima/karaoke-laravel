@@ -33,7 +33,6 @@
                             @method('delete')
                         </form>
 
-
                     </div>
 
                     <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
@@ -66,6 +65,11 @@
                 <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
 
                 <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
+
+                @foreach($categories as $categorie)
+                    <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}">
+                    <label for="{{ $categorie->id }}">{{ $categorie->title }}</label><br>
+                @endforeach
 
                 <!--BOUTONS-->
                 <div class="espaces-boutons">
