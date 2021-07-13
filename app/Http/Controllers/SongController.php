@@ -25,6 +25,19 @@ class SongController extends Controller
         ]);
     }
 
+    // test2 page
+    public function indexJSON2()
+    {
+        $songs = Song::all();
+        $categories = Category::all();
+
+        return [
+            "songs" => $songs,
+            "categories" => $categories
+        ];
+    }
+
+    // test page
     public function indexJSON()
     {
         $songs = Song::all();

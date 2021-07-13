@@ -34,13 +34,13 @@
 
                             <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
                         </form>
+                    </div>
 
-                        {{-- Catégorie(s):
+                    <div>
+                        Catégorie(s):
                         @foreach($item->categories as $categorie)
-                            - {{ $categorie["name"] }}
-                        @endforeach</a> --}}
-
-
+                            - {{ $categorie["title"] }}
+                        @endforeach</a>
                     </div>
 
                     <div class="buttons">
