@@ -31,10 +31,12 @@
                             <input class="btn btn-default" type="submit" value="X" />
                             @csrf
                             @method('delete')
-
-                            <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
                         </form>
+
+
                     </div>
+
+                    <p><a class="edit" title="Edit" href="/{{ $item->id }}/edit">✍️</a></p>
 
                     <div>
                         Catégorie(s):
