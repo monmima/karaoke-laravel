@@ -25,6 +25,7 @@ Route::put('/{id}/edit', "App\Http\Controllers\SongController@update");
 Route::delete('/{id}/delete', "App\Http\Controllers\SongController@destroy");
 
 Route::get('/test', "App\Http\Controllers\SongController@indexJSON");
+Route::get('/test2', "App\Http\Controllers\SongController@indexJSON2");
 
 // categories
 Route::get('/categories', "App\Http\Controllers\SongCategoriesController@index");
