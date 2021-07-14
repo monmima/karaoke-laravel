@@ -68,7 +68,7 @@
 
             <h3>Create New Entry</h3>
 
-            <form method="POST" name="edit-song" id="edit-song" action="/create">
+            <form method="POST" name="create-song" id="create-song" action="/create">
                 <!-- cross-site request forgery -->
                 @csrf
                 <!-- because modern browsers/forms can only take two different methods -->
