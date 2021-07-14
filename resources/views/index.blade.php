@@ -59,10 +59,12 @@
 
             <h3>Filters</h3>
 
-            @foreach($categories as $categorie)
-                <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}">
-                <label for="{{ $categorie->id }}">{{ $categorie->title }}</label><br>
-            @endforeach
+            <ul>
+                @foreach($categories as $categorie)
+                    <li><a href="/categories/{{ $categorie->title }}" title="{{ $categorie->title }}">{{ $categorie->title }}<a></li>
+                @endforeach
+            </ul>
+
 
             <h3>Create New Entry</h3>
 
