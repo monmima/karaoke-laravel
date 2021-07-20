@@ -75,16 +75,12 @@ class SongCategoriesController extends Controller
             //     error_log($categorie["title"]);
             // }
 
-
-            // error_log(print_r($allCategNames, true));
-            // error_log(print_r($allCategNames, true));
-            // error_log(print_r($allCategNames, true));
             // error_log(print_r($allCategNames, true));
             // error_log("test");
         }
 
         return [
-            "songs" => $result
+            "songs" => $songs
         ];
     }
 }
