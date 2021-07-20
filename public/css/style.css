@@ -71,6 +71,11 @@ section > article {
 
 /* media queries */
 @media screen and (max-width: 600px) {
+    aside {
+        /* flex child property */
+        order: 1;
+    }
+
     main {
         display: flex;
         flex-direction: row;
@@ -82,21 +87,33 @@ section > article {
         /* background-color: yellow; */
         display: grid;
         grid-template-columns: 1fr;
+
+        /* flex child */
+        order: 2;
     }
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
+    aside {
+        /* flex child property */
+        order: 1;
+    }
+
     main {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        order: 1;
     }
 
     section {
         /* background-color: blue; */
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        /* flex child */
+        order: 2;
     }
 }
 
