@@ -58,7 +58,7 @@
     <hr>
 
     <form action="/{{ $song->id }}/delete" method="post">
-        <input class="btn btn-default" type="submit" value="X" />
+        <input class="btn btn-default" type="submit" value="DELETE ENTRY" />
         @csrf
         @method('delete')
     </form>
