@@ -11,10 +11,6 @@
 <body>
     <header>
         <h1>Nés pour chanter</h1>
-
-        <p><a href="/categories" title="Catégories de chansons">Voir les catégories</a>
-        <p><a href="/test" title="Test 1">Test 1</a>
-        <p><a href="/test2" title="Test 2">Test 2</a>
     </header>
 
     <main>
@@ -56,6 +52,9 @@
         </section>
 
         <aside>
+            <p><a href="/categories" title="Catégories de chansons">Voir les catégories</a>
+            <p><a href="/test" title="Test 1">Test 1</a>
+            <p><a href="/test2" title="Test 2">Test 2</a>
 
             <h3>Filters</h3>
 
