@@ -39,7 +39,7 @@
                         Catégorie(s):
                         @foreach($item->categories as $categorie)
                             - {{ $categorie["title"] }}
-                        @endforeach</a>
+                        @endforeach
                     </div>
 
                     <div class="buttons">
