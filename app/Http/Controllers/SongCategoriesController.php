@@ -27,60 +27,27 @@ class SongCategoriesController extends Controller
     // show only one category of songs on the main page with click on filters
     public function show($id)
     {
-        $songs = Song::all();
+
+        error_log($id);
+        error_log(gettype($id));
+
+        // works only for non-dynamic queries
+        // $songs = Song::query()->whereHas('categories', function ($id) {
+        //     $id->where("categories.title", $id);
+        // })->get();
+
+        // works with dynamic queries
+        $songs = Song::query()->whereHas('categories', function ($query) use ($id) {
+            $query->where("categories.title", $id);
+        })->get();
 
         $categories = Category::all();
 
-        // return view("index", [
-        //     "songs" => $songs
-        //         ->where("title", $id),
-        //     "categories" => $categories
-        // ]);
 
-        // error_log($songs->categories);
+        return view("index", [
+            "songs" => $songs,
+            "categories" => $categories
+        ]);
 
-        /* print song only when song has a matching category with the id */
-        foreach ($songs as $item) {
-            // foreach($item->categories as $categorie) {
-            //     error_log($categorie["title"]);
-            // }
-
-            // if (in_array($id, $item->categories))
-            //     error_log("test");
-
-            // 1. create an array
-            $sortedSongs = array();
-            $result = array();
-
-            // 2. iterate through the array
-            foreach($item->categories as $categorie) {
-                // 2.1 push categories for each song to array
-                array_push($sortedSongs, $categorie["title"]);
-                // error_log($categorie["title"]);
-
-                // 2.2 if song category in array, push song to $result
-                if (in_array($id, $sortedSongs)) {
-                    // error_log("test");
-                    array_push($result, $categorie["title"]);
-                }
-
-                error_log($item);
-                error_log(print_r($result, true));
-            }
-
-            // 3.
-
-
-                        // foreach($item->categories as $categorie) {
-            //     error_log($categorie["title"]);
-            // }
-
-            // error_log(print_r($allCategNames, true));
-            // error_log("test");
-        }
-
-        return [
-            "songs" => $songs
-        ];
     }
 }
