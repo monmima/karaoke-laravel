@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nés pour chanter</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
 </head>
 <body>
     <header>
@@ -60,7 +60,7 @@
 
             <ul>
                 @foreach($categories as $categorie)
-                    <li><a href="/categories/{{ $categorie->title }}" title="{{ $categorie->title }}">{{ $categorie->title }}<a></li>
+                    <li><a href="/categories/{{ $categorie->title }}" title="{{ $categorie->title }}">{{ $categorie->title }}</a></li>
                 @endforeach
             </ul>
 
