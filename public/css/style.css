@@ -91,19 +91,25 @@ section > article {
         /* flex child */
         order: 2;
     }
+
+    .hide-on-mobile {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
     aside {
         /* flex child property */
         order: 1;
+        align-items: left;
+        justify-items: left;
+
     }
 
     main {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
         order: 1;
     }
 
@@ -115,13 +121,23 @@ section > article {
         /* flex child */
         order: 2;
     }
+
+    .hide-on-mobile {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 801px) and (max-width: 1000px) {
+
+
     section {
         /* background-color: green; */
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .hide-on-mobile {
+        display: none;
     }
 }
 

@@ -67,29 +67,32 @@
             </ul>
 
 
-            <h3>Create New Entry</h3>
+            <div class="hide-on-mobile">
+                <h3>Create New Entry</h3>
 
-            <form method="POST" name="create-song" id="create-song" action="/create">
-                <!-- cross-site request forgery -->
-                @csrf
-                <!-- because modern browsers/forms can only take two different methods -->
+                <form method="POST" name="create-song" id="create-song" action="/create">
+                    <!-- cross-site request forgery -->
+                    @csrf
+                    <!-- because modern browsers/forms can only take two different methods -->
 
-                <p><input type="text" name="name" id="name" placeholder="name"></p>
-                <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
+                    <p><input type="text" name="name" id="name" placeholder="name"></p>
+                    <p><input type="text" name="artist" id="artist" placeholder="artist"></p>
 
-                <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
+                    <p><textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="lyrics"></textarea></p>
 
-                @foreach($categories as $categorie)
-                    <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}">
-                    <label for="{{ $categorie->id }}">{{ $categorie->title }}</label><br>
-                @endforeach
+                    @foreach($categories as $categorie)
+                        <input type="checkbox" id="{{ $categorie->id }}" name="{{ $categorie->id }}" value="{{ $categorie->title }}">
+                        <label for="{{ $categorie->id }}">{{ $categorie->title }}</label><br>
+                    @endforeach
 
-                <!--BOUTONS-->
-                <div class="espaces-boutons">
-                    <button type="reset" value="Reset">Reset</button>
-                    <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
-                </div>
-            </form>
+                    <!--BOUTONS-->
+                    <div class="espaces-boutons">
+                        <button type="reset" value="Reset">Reset</button>
+                        <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
+                    </div>
+                </form>
+            </div>
+
         </aside>
 
     </main>
