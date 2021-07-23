@@ -45,8 +45,8 @@
                     </div>
 
                     <div class="buttons">
-                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}">Lyrics</a>
-                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}">Karaoke</a>
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=lyrics+{{ $item->artist }}+{{ $item->name }}" target="_blank">Lyrics</a>
+                        <a rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=karaoke+{{ $item->artist }}+{{ $item->name }}" target="_blank">Karaoke</a>
                     </div>
                 </article>
 
@@ -54,9 +54,19 @@
         </section>
 
         <aside>
-            <p><a href="/categories" title="Catégories de chansons">Voir les catégories</a>
-            <p><a href="/test" title="Test 1">Test 1</a>
-            <p><a href="/test2" title="Test 2">Test 2</a>
+
+            <h3>Many thanks to:</h3>
+
+            <ul>
+                <li>Heroku</li>
+                <li>Laravel</li>
+                <li>Blade</li>
+                <li>SQLite</li>
+            </ul>
+
+            <h3>Source Code</h3>
+
+            Source Code on <a href="https://www.github.com/monmima/karaoke-laravel" title="Source Code">Github</a>.
 
             <h3>Filters</h3>
 
@@ -65,6 +75,12 @@
                     <li><a href="/categories/{{ $categorie->title }}" title="{{ $categorie->title }}">{{ $categorie->title }}</a></li>
                 @endforeach
             </ul>
+
+            <h3>Notes</h3>
+
+            <p><a href="/categories" title="Catégories de chansons">Voir les catégories</a>
+            <p><a href="/test" title="Test 1">Test 1</a>
+            <p><a href="/test2" title="Test 2">Test 2</a>
 
 
             <div class="hide-on-mobile">
